@@ -1,6 +1,7 @@
 package com.ijunfu.easycsv.autoconfig.config;
 
 import com.ijunfu.easycsv.autoconfig.interceptor.PathLogInterceptor;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -14,6 +15,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  */
 
 @Configuration
+@ConditionalOnProperty(value = "path.log", havingValue = "true")
 public class PathLogAutoConfig implements WebMvcConfigurer {
 
     @Override
